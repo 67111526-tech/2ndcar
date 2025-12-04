@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2ndCar - ขายรถมือสอง</title>
+    <style>
+        html {
+                scroll-behavior: smooth;
+        }
+        @media (max-width:768px) {
+            nav ul {
+                    flex-direction: column;
+                    gap: 10px;
+            }
+        .cars {
+                    flex-direction: column;
+                    align-items: center;
+            }
+
+        .services {
+                    flex-direction: column;
+                    align-items: center;
+            }
+
+        .hero h1 {
+                    font-size: 2rem;
+            }
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Poppins", sans-serif;
+            color: #000000;
+            background-color: rgba(0, 0, 0, 0.075);
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        nav {
+            background-color: rgb(24, 24, 24);
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #9900ff;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+        nav ul li a:hover {
+            color: #00bfff;
+        }
+
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.6)),
+                url("image/garage.png");
+            color: #fff;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+        .hero button {
+            background-color: #9900ff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .hero button:hover {
+            background-color: #9900ff;
+
+        }
+
+        section {
+            padding: 60px 40px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #111;
+        }
+        p {
+            color: #000000;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .cars {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .cars-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 400px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .cars-card:hover {
+            transform: translateY(-5px);
+        }
+        .cars-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .cars-card h3 {
+            padding: 10px;
+        }
+
+        .services {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .service {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 250px;
+            padding: 20px;
+        }
+
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+
+        form {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: 0 auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button.submit-btn {
+            width: 100%;
+            background-color: #9900ff;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        button.submit-btn:hover {
+            background-color: #9900ff;
+        }
+
+        footer {
+            background-color: #111111a6;
+            color: #bbb;
+            text-align: center;
+            padding: 20px;
+        }
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .video-container video{
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">2ndCar</div>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#cars">Car</a></li>
+            <li><a href="#services">Service</a></li>
+            <li><a href="#register">Register</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero" class="hero">
+        <h1>รถเก่าสำหรับเราแต่ใหม่สำหรับคุณ</h1>
+        <p>รถคุณภาพสูงที่ตอบโจทย์ทุกไลฟ์สไตล์ของคุณ</p>
+        <button onclick="document.getElementById('cars').scrollIntoView({behavior: 'smooth'});">ดูรถ</button>
+    </section>
+
+    <section id="about">
+        <h2>เกี่ยวกับเรา</h2>
+        <p>2ndCar คือรถมือสองที่คุณภาพดีขายให้คุณในราคาที่คุ้มที่สุด เราพร้อมดูแลและช่วยเหลือคุณจากการถูกกดราคา หรือการซื้อ-ขายที่ไม่เป็นธรรม เราจึงสร้างมาตรการที่เข้มงวดในการตรวจสอบความน่าเชื่อถือของพาร์ทเนอร์ (ผู้ซื้อ)ก่อนเริ่มทำการซื้อ-ขายผ่านระบบ</p>
+    </section>
+
+    <section id="cars">
+        <h2>รถแนะนำ</h2>
+        <div class="cars">
+            <div class="cars-card">
+                <img src="image/r34.png" alt="NISSAN R34">
+                    <h2>R34 GTR</h2>
+                    <h3>ราคา</h3>
+                    <h4>฿499999</h4>
+                    <button>ซื้อรถ</button>
+            </div>
+            <div class="cars-card">
+                <img src="image/lexuslc500.jpg" alt="Lexus LC500">
+                    <h2>LEXUS LC500</h2>
+                    <h3>ราคา</h3>
+                    <h4>฿499999</h4>
+                    <button>ซื้อรถ</button>
+            </div>
+            <div class="cars-card">
+                <img src="image/bmwm4.jpg" alt="BMW M4">
+                        <h2>BMW M4</h2>
+                        <h3>ราคา</h3>
+                        <h4>฿499999</h4>
+                        <button>ซื้อรถ</button>
+            </div>
+            <div class="cars-card">
+                <img src="image/grsupra.png" alt="Toyota Gr Supra">
+                    <h2>Gr Supra</h2>
+                    <h3>ราคา</h3>
+                    <h4>฿499999</h4>
+                    <button>ซื้อรถ</button>
+            </div>
+            <div class="cars-card">
+                <img src="image/Mitsuevox.jpg" alt="Mitsubishi Evo X">
+                    <h2>Mitsubishi Evo X</h2>
+                    <h3>ราคา</h3>
+                    <h4>฿499999</h4>
+                    <button>ซื้อรถ</button>
+            </div>
+            <div class="cars-card">
+                <img src="image/c43.jpg" alt="Mercedes AMG C43">
+                    <h2>Mercedes AMG C43</h2>
+                    <h3>ราคา</h3>
+                    <h4>฿499999</h4>
+                    <button>ซื้อรถ</button>
+            </div>
+            <div class="cars-card">
+                <img src="image/Lamborghini_Huracan.jpg" alt="Lamborghini Huracan">
+                    <h2>Lamborghini Huracan</h2>
+                    <h3>ราคา</h3>
+                    <h4>฿499999</h4>
+                    <button>ซื้อรถ</button>
+            </div>
+            <div class="cars-card">
+                <img src="image/Porsche-GT3-RS.jpg" alt="Porshe GT3 RS">
+                    <h2>Porshe GT3 RS</h2>
+                    <h3>ราคา</h3>
+                    <h4>฿499999</h4>
+                    <button>ซื้อรถ</button>
+            </div>
+    </section>
+    
+    <section id="video" data-aos="fade-up">
+        <h2>ชมวีดีโอแนะนำ</h2>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/D3djVW3dSGA?si=4VqdUzGSfXeL_jHg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    <section id="services">
+        <h2>บริการของเรา</h2>
+        <div class="services">
+            <div class="service">
+                <h3>จัดส่งทั่วประเทศ</h3>
+                <p>บริการจัดส่งรวดเร็ว ปลอดภัย ถึงมือคุณแน่นอน</p>
+            </div>
+            <div class="service">
+                <h3>รับประกันรถ</h3>
+                <p>รับประกันรถทุกคันพร้อมบริการหลังการขาย</p>
+            </div>
+            <div class="service">
+                <h3>ให้คำปรึกษา</h3>
+                <p>ทีมงานผู้เชี่ยวชาญพร้อมให้คำแนะนำตลอดเวลา</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="register">
+        <h2>ลงทะเบียนรับข่าวสาร</h2>
+        <form id="registerForm">
+            <label>ชื่อ:</label>
+            <input type="text" id="name" required />
+            <label>อีเมล:</label>
+            <input type="email" id="email" required />
+            <button type="submit" class="submit-btn">ลงทะเบียน</button>
+        </form>
+    </section>
+
+    <section id="contact">
+        <h2>ติดต่อเรา</h2>
+        <p>123 DPU | Tel.02-123-4567</p>
+        <iframe src="https://www.google.com/maps?q=Bangkok&output=embed"
+                width="100%" height="300" style="border: 0; border-radius: 10px;" allowfullscreen>
+        </iframe>
+    </section>
+    
+    <footer>
+        <p>© 2025 2ndCar | ติดตามเรา: Facebook | Instagram | Twitter</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById('registerForm');
+        form.addEventListener('submit',async(e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+
+            if (!name || !email) {
+                alert('กรุณากรอกข้อมูลให้ครบถ้วน');
+                return;
+            }
+        const data = {name, email};
+        console.log('ส่งข้อมูลไป API',data);
+        alert('ลงทะเบียนสำเร็จ ขอบคุณที่ร่วมกับเรา');
+        form.reset();
+        });
+    </script>
+
+</body>
+</html>
